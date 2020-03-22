@@ -8,8 +8,7 @@ import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 
 @NgModule({
   declarations: [HeaderComponent, PokemonsPageComponent, PokemonCardComponent],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
+  exports: [PokemonsPageComponent, HeaderComponent]
 })
 export class PokemonModule { }
