@@ -1,3 +1,5 @@
+<button type="button" class="btn btn-primary" (click)="switchView()">Switch the view</button>
 <div *ngFor="let pokemon of pokemons">
-    <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
+    <app-pokemon-card *ngIf="!simpleView" [pokemon]="pokemon"></app-pokemon-card>
+    <p *ngIf="simpleView">{{pokemon.name}}</p>
 </div>

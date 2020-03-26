@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokemons-page.component.scss']
 })
 export class PokemonsPageComponent implements OnInit {
+  simpleView = false;
   pokemons = [
     {
       name: 'bulbasaur',
@@ -74,4 +75,7 @@ export class PokemonsPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  switchView() {
+    this.simpleView = !this.simpleView;
+  }
 }
