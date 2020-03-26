@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Pokemon } from '../models/pokemon.model';
 
 @Component({
   selector: 'app-pokemons-page',
@@ -6,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokemons-page.component.scss']
 })
 export class PokemonsPageComponent implements OnInit {
-  simpleView = false;
-  pokemons = [
+  simpleView: boolean = false;
+  pokemons: Pokemon[] = [
     {
       name: 'bulbasaur',
       id: 1,
-      damage: 0
+      damage: 51
     },
     {
       name: 'ivysaur',
@@ -75,7 +76,7 @@ export class PokemonsPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  switchView() {
+  switchView(): void {
     this.simpleView = !this.simpleView;
   }
 }
