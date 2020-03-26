@@ -32,7 +32,7 @@ export class PokemonsPageComponent implements OnInit {
     {
       name: 'charmeleon',
       id: 5,
-      damage: 0
+      damage: 62
     },
     {
       name: 'charizard',
@@ -42,7 +42,7 @@ export class PokemonsPageComponent implements OnInit {
     {
       name: 'squirtle',
       id: 7,
-      damage: 0
+      damage: 85
     },
     {
       name: 'wartortle',
