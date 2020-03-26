@@ -1,5 +1,13 @@
 <button type="button" class="btn btn-primary" (click)="switchView()">Switch the view</button>
-<div *ngFor="let pokemon of pokemons" class="pokemons-list">
-    <app-pokemon-card *ngIf="!simpleView" [pokemon]="pokemon"></app-pokemon-card>
-    <p *ngIf="simpleView">Name: {{pokemon.name}}, id: {{pokemon.id}}, damage: {{pokemon.damage}}</p>
+<div *ngIf="!simpleView" class="pokemons-list">
+    <ng-container *ngFor="let pokemon of pokemons">
+        <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
+        <p *ngIf="simpleView">Name: {{pokemon.name}}, id: {{pokemon.id}}, damage: {{pokemon.damage}}</p>
+    </ng-container>
 </div>
+
+<ng-container *ngIf="simpleView">
+    <ng-container *ngFor="let pokemon of pokemons">
+        <p>Name: {{pokemon.name}}, id: {{pokemon.id}}, damage: {{pokemon.damage}}</p>
+    </ng-container>
+</ng-container>

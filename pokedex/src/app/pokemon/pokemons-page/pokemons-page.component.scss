@@ -3,8 +3,11 @@
     justify-content: center;
     margin-top: 10px;
 }
+
 .pokemons-list {
     display: flex;
     flex-direction: row;
     margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
