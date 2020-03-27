@@ -7,7 +7,7 @@ import { Pokemon } from '../models/pokemon.model';
   styleUrls: ['./pokemon-card.component.scss']
 })
 export class PokemonCardComponent implements OnInit {
-  setFreeButton: boolean = false;
+  setFreeButton = false;
   @Input() pokemon: Pokemon;
 
   constructor() { }

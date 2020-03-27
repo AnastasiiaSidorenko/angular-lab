@@ -7,7 +7,7 @@ import { Pokemon } from '../models/pokemon.model';
   styleUrls: ['./pokemons-page.component.scss']
 })
 export class PokemonsPageComponent implements OnInit {
-  simpleView: boolean = false;
+  simpleView = false;
   pokemons: Pokemon[] = [
     {
       name: 'bulbasaur',
