@@ -79,4 +79,8 @@ export class PokemonsPageComponent implements OnInit {
   switchView(): void {
     this.simpleView = !this.simpleView;
   }
+
+  onChanged(message: string): void {
+    console.log(message);
+  }
 }

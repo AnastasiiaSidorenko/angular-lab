@@ -4,7 +4,7 @@
 
 <div *ngIf="!simpleView" class="pokemons-list">
     <ng-container *ngFor="let pokemon of pokemons">
-        <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
+        <app-pokemon-card [pokemon]="pokemon" (onChanged)="onChanged($event)"></app-pokemon-card>
     </ng-container>
 </div>
 

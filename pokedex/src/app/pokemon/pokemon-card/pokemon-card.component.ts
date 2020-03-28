@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Pokemon } from '../models/pokemon.model';
 
 @Component({
@@ -10,14 +10,16 @@ export class PokemonCardComponent implements OnInit {
   setFreeButton = false;
   @Input() pokemon: Pokemon;
 
+  @Output() onChanged = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  switchButton(name): void {
+  switchButton(name: string): void {
     this.setFreeButton = !this.setFreeButton;
-    console.log(`Pokemon ${name} ${this.setFreeButton ? 'is caught' : 'is free'}`);
+    this.onChanged.emit(`Pokemon ${name} ${this.setFreeButton ? 'is caught' : 'is free'}`);
   }
 
 }
