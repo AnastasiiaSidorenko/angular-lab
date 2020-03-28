@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../models/pokemon.model';
+import { PokemonState } from '../models/pokemon-state.model'
 
 @Component({
   selector: 'app-pokemons-page',
@@ -80,7 +81,7 @@ export class PokemonsPageComponent implements OnInit {
     this.simpleView = !this.simpleView;
   }
 
-  onChanged(message: string): void {
-    console.log(message);
+  onChanged(pokemonState: PokemonState): void {
+    console.log(`Pokemon ${pokemonState.name} ${pokemonState.setFreeButton ? 'is caught' : 'is free'}`);
   }
 }
