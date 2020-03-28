@@ -1,12 +1,15 @@
-<p>pokemons-page works!</p>
-<app-pokemon-card></app-pokemon-card>
-<app-pokemon-card></app-pokemon-card>
-<app-pokemon-card></app-pokemon-card>
-<app-pokemon-card></app-pokemon-card>
-<app-pokemon-card></app-pokemon-card>
-<app-pokemon-card></app-pokemon-card>
-<app-pokemon-card></app-pokemon-card>
-<app-pokemon-card></app-pokemon-card>
-<app-pokemon-card></app-pokemon-card>
-<app-pokemon-card></app-pokemon-card>
+<div class="switch-view-button">
+    <button type="button" class="btn btn-primary" (click)="switchView()">Switch the view</button>
+</div>
 
+<div *ngIf="!simpleView" class="pokemons-list">
+    <ng-container *ngFor="let pokemon of pokemons">
+        <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
+    </ng-container>
+</div>
+
+<ng-container *ngIf="simpleView">
+    <ng-container *ngFor="let pokemon of pokemons">
+        <app-pokemon-text [pokemon]="pokemon"></app-pokemon-text>
+    </ng-container>
+</ng-container>

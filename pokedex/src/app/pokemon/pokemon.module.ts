@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { PokemonsPageComponent } from './pokemons-page/pokemons-page.component';
 import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
-
-
+import { RedBoldDirective } from './directives/card-border.directive';
+import { PokemonTextComponent } from './pokemon-text/pokemon-text.component';
 
 @NgModule({
-  declarations: [HeaderComponent, PokemonsPageComponent, PokemonCardComponent],
+  declarations: [HeaderComponent, PokemonsPageComponent, PokemonCardComponent, RedBoldDirective, PokemonTextComponent],
   imports: [CommonModule],
-  exports: [PokemonsPageComponent, HeaderComponent]
+  exports: [PokemonsPageComponent, HeaderComponent, PokemonCardComponent]
 })
 export class PokemonModule { }

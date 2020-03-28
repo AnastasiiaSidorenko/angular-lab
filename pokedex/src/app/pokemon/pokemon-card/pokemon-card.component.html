@@ -1,1 +1,10 @@
-<p>pokemon-card works!</p>
+<div [red-bold]="pokemon.damage" class="card text-center">
+    <img src="../../../assets/images/{{pokemon.id}}.png" class="card-img-top" alt="{{pokemon.name}}">
+    <div class="card-body">
+        <h5 class="card-title">{{pokemon.name}}</h5>
+        <p class="card-text">id:{{pokemon.id}}</p>
+        <p class="card-text">damage:{{pokemon.damage}}</p>
+        <button *ngIf="!setFreeButton" class="btn btn-primary" (click)="switchButton(pokemon.name)">Catch</button>
+        <button *ngIf="setFreeButton" class="btn btn-primary" (click)="switchButton(pokemon.name)">Set free</button>
+    </div>
+</div>
