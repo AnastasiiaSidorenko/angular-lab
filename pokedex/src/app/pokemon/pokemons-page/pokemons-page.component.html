@@ -10,6 +10,6 @@
 
 <ng-container *ngIf="simpleView">
     <ng-container *ngFor="let pokemon of pokemons">
-        <app-pokemon-text [pokemon]="pokemon"></app-pokemon-text>
+        <app-pokemon-text [pokemon]="pokemon" (onChanged)="onChanged($event)"></app-pokemon-text>
     </ng-container>
 </ng-container>
