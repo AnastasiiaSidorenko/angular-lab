@@ -1,4 +1,4 @@
-<div [red-bold]="pokemon.damage">
+<div [appRedBold]="pokemon.damage">
     <p>Name: {{pokemon.name}}, id: {{pokemon.id}}, damage: {{pokemon.damage}}</p>
     <button *ngIf="!setFreeButton" class="btn btn-primary" (click)="switchButton(pokemon.name)">Catch</button>
     <button *ngIf="setFreeButton" class="btn btn-primary" (click)="switchButton(pokemon.name)">Set free</button>
