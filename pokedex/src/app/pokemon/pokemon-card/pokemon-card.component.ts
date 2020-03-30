@@ -12,7 +12,7 @@ export class PokemonCardComponent implements OnInit {
   setFreeButton = false;
   @Input() pokemon: Pokemon;
 
-  @Output() onChanged = new EventEmitter<PokemonState>();
+  @Output() changed = new EventEmitter<PokemonState>();
 
   constructor() { }
 
@@ -21,7 +21,7 @@ export class PokemonCardComponent implements OnInit {
 
   switchButton(name: string): void {
     this.setFreeButton = !this.setFreeButton;
-    this.onChanged.emit({ name: name, setFreeButton: this.setFreeButton });
+    this.changed.emit({ name, setFreeButton: this.setFreeButton });
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../models/pokemon.model';
-import { PokemonState } from '../models/pokemon-state.model'
+import { PokemonState } from '../models/pokemon-state.model';
 
 @Component({
   selector: 'app-pokemons-page',

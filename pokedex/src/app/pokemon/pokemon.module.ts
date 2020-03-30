@@ -8,8 +8,19 @@ import { PokemonTextComponent } from './pokemon-text/pokemon-text.component';
 import { PokemonProfileComponent } from './pokemon-profile/pokemon-profile.component';
 
 @NgModule({
-  declarations: [HeaderComponent, PokemonsPageComponent, PokemonCardComponent, RedBoldDirective, PokemonTextComponent, PokemonProfileComponent],
+  declarations: [
+    HeaderComponent,
+    PokemonsPageComponent,
+    PokemonCardComponent,
+    RedBoldDirective,
+    PokemonTextComponent,
+    PokemonProfileComponent
+  ],
   imports: [CommonModule],
-  exports: [PokemonsPageComponent, HeaderComponent, PokemonCardComponent, PokemonProfileComponent]
+  exports: [
+    PokemonsPageComponent,
+    HeaderComponent,
+    PokemonCardComponent,
+    PokemonProfileComponent]
 })
 export class PokemonModule { }
