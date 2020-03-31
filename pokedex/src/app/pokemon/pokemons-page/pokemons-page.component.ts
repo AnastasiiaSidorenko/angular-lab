@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../models/pokemon.model';
-import { PokemonState } from '../models/pokemon-state.model';
 
 @Component({
   selector: 'app-pokemons-page',
@@ -13,62 +12,74 @@ export class PokemonsPageComponent implements OnInit {
     {
       name: 'bulbasaur',
       id: 1,
-      damage: 51
+      damage: 51,
+      isCaught: false
     },
     {
       name: 'ivysaur',
       id: 2,
-      damage: 0
+      damage: 0,
+      isCaught: false
     },
     {
       name: 'venusaur',
       id: 3,
-      damage: 0
+      damage: 0,
+      isCaught: false
     },
     {
       name: 'charmander',
       id: 4,
-      damage: 0
+      damage: 0,
+      isCaught: false
     },
     {
       name: 'charmeleon',
       id: 5,
-      damage: 62
+      damage: 62,
+      isCaught: false
     },
     {
       name: 'charizard',
       id: 6,
-      damage: 0
+      damage: 0,
+      isCaught: false
     },
     {
       name: 'squirtle',
       id: 7,
-      damage: 85
+      damage: 85,
+      isCaught: false
     },
     {
       name: 'wartortle',
       id: 8,
-      damage: 0
+      damage: 0,
+      isCaught: false
     },
     {
       name: 'blastoise',
       id: 9,
-      damage: 0
+      damage: 0,
+      isCaught: false
     },
     {
       name: 'caterpie',
       id: 10,
-      damage: 0
+      damage: 0,
+      isCaught: false
     },
     {
       name: 'metapod',
       id: 11,
-      damage: 0
+      damage: 0,
+      isCaught: false
     },
     {
       name: 'butterfree',
       id: 12,
-      damage: 0
+      damage: 0,
+      isCaught: false
     }
   ];
 
@@ -81,7 +92,9 @@ export class PokemonsPageComponent implements OnInit {
     this.simpleView = !this.simpleView;
   }
 
-  onChanged(pokemonState: PokemonState): void {
-    console.log(`Pokemon ${pokemonState.name} ${pokemonState.setFreeButton ? 'is caught' : 'is free'}`);
+  onChanged(id: number): void {
+    const pokemon = this.pokemons.find(item => item.id === id);
+    pokemon.isCaught = !pokemon.isCaught;
+    console.log(`Pokemon ${pokemon.name} ${pokemon.isCaught ? 'is caught' : 'is free'}`);
   }
 }

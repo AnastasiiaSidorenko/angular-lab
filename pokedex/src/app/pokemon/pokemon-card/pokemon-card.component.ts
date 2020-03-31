@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { Pokemon } from '../models/pokemon.model';
-import { PokemonState } from '../models/pokemon-state.model';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -9,19 +8,15 @@ import { PokemonState } from '../models/pokemon-state.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PokemonCardComponent implements OnInit {
-  setFreeButton = false;
   @Input() pokemon: Pokemon;
-
-  @Output() changed = new EventEmitter<PokemonState>();
+  @Output() changed = new EventEmitter<number>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  switchButton(name: string): void {
-    this.setFreeButton = !this.setFreeButton;
-    this.changed.emit({ name, setFreeButton: this.setFreeButton });
+  switchButton(id: number): void {
+    this.changed.emit(id);
   }
-
 }
