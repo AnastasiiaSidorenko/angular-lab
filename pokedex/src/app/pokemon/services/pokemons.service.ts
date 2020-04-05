@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Pokemon } from './models/pokemon.model';
+import { Pokemon } from '../models/pokemon.model';
 
 @Injectable({
   providedIn: 'root'
