@@ -6,6 +6,7 @@ import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 import { RedBoldDirective } from './directives/card-border.directive';
 import { PokemonTextComponent } from './pokemon-text/pokemon-text.component';
 import { PokemonProfileComponent } from './pokemon-profile/pokemon-profile.component';
+import { PokemonSearchComponent } from './pokemon-search/pokemon-search.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PokemonProfileComponent } from './pokemon-profile/pokemon-profile.compo
     PokemonCardComponent,
     RedBoldDirective,
     PokemonTextComponent,
-    PokemonProfileComponent
+    PokemonProfileComponent,
+    PokemonSearchComponent
   ],
   imports: [CommonModule],
   exports: [
