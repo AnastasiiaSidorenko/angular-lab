@@ -25,6 +25,10 @@ export class PokemonsPageComponent implements OnInit {
     this.pokemons = this.pokemonsService.getAllPokemons();
   }
 
+  filterPokemons(name: string): void {
+    this.pokemons = this.pokemonsService.filterPokemons(name);
+  }
+
   onChanged(id: number): void {
     const pokemon = this.pokemonsService.getPokemonById(id);
     pokemon.isCaught = !pokemon.isCaught;
