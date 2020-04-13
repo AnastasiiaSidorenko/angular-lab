@@ -7,6 +7,7 @@ import { RedBoldDirective } from './directives/card-border.directive';
 import { PokemonTextComponent } from './pokemon-text/pokemon-text.component';
 import { PokemonProfileComponent } from './pokemon-profile/pokemon-profile.component';
 import { PokemonSearchComponent } from './pokemon-search/pokemon-search.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PokemonSearchComponent } from './pokemon-search/pokemon-search.componen
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   exports: [
     PokemonsPageComponent,

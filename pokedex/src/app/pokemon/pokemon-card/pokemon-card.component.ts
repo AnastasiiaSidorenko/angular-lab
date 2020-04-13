@@ -16,7 +16,9 @@ export class PokemonCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  switchButton(id: number): void {
+  switchButton(id: number, event: any): void {
+    event.preventDefault();
+    event.stopPropagation();
     this.changed.emit(id);
   }
 }
