@@ -3,4 +3,5 @@ export interface Pokemon {
     id: number;
     damage: number;
     isCaught: boolean;
+    createdAt: string;
 }
