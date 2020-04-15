@@ -1,5 +1,5 @@
 <div [appRedBold]="pokemon.damage">
     <p>Name: {{pokemon.name}}, id: {{pokemon.id}}, damage: {{pokemon.damage}}</p>
-    <button *ngIf="!setFreeButton" class="btn btn-primary" (click)="switchButton(pokemon.name)">Catch</button>
-    <button *ngIf="setFreeButton" class="btn btn-primary" (click)="switchButton(pokemon.name)">Set free</button>
+    <button *ngIf="!pokemon.isCaught" class="btn btn-primary" (click)="switchButton(pokemon.id)">Catch</button>
+    <button *ngIf="pokemon.isCaught" class="btn btn-primary" (click)="switchButton(pokemon.id)">Set free</button>
 </div>

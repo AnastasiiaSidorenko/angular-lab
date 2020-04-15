@@ -1,23 +1,22 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { Pokemon } from '../models/pokemon.model';
 
 @Component({
   selector: 'app-pokemon-card',
   templateUrl: './pokemon-card.component.html',
-  styleUrls: ['./pokemon-card.component.scss']
+  styleUrls: ['./pokemon-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PokemonCardComponent implements OnInit {
-  setFreeButton = false;
   @Input() pokemon: Pokemon;
+  @Output() changed = new EventEmitter<number>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  switchButton(name): void {
-    this.setFreeButton = !this.setFreeButton;
-    console.log(`Pokemon ${name} ${this.setFreeButton ? 'is caught' : 'is free'}`);
+  switchButton(id: number): void {
+    this.changed.emit(id);
   }
-
 }
