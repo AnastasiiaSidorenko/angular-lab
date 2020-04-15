@@ -2,7 +2,7 @@
     <button type="button" class="btn btn-primary" (click)="switchView()">Switch the view</button>
 </div>
 
-<app-pokemon-search></app-pokemon-search>
+<app-pokemon-search (changed)="filterPokemons($event)"></app-pokemon-search>
 
 <div *ngIf="!simpleView" class="pokemons-list">
     <ng-container *ngFor="let pokemon of pokemons">

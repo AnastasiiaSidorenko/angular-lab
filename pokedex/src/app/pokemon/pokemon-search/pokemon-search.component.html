@@ -1,4 +1,4 @@
 <form class="form-inline">
-    <input class="form-control" type="search" placeholder="Which pokemon do you want to find?" aria-label="Search">
-    <button class="btn btn-outline-success" type="submit">Search</button>
+    <input [(ngModel)]="pokemonName" [ngModelOptions]="{standalone: true}" class="form-control" type="search" placeholder="Which pokemon do you want to find?" aria-label="Search">
+    <button (click)="searchButton()" class="btn btn-outline-success" type="submit">Search</button>
 </form>

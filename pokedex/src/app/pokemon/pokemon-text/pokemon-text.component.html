@@ -1,5 +1,10 @@
-<div [appRedBold]="pokemon.damage">
+<a [routerLink]="['/pokemons', pokemon.id]" [appRedBold]="pokemon.damage" class="text">
     <p>Name: {{pokemon.name}}, id: {{pokemon.id}}, damage: {{pokemon.damage}}</p>
-    <button *ngIf="!pokemon.isCaught" class="btn btn-primary" (click)="switchButton(pokemon.id)">Catch</button>
-    <button *ngIf="pokemon.isCaught" class="btn btn-primary" (click)="switchButton(pokemon.id)">Set free</button>
-</div>
+    <div class="buttons">
+        <button *ngIf="!pokemon.isCaught" class="btn btn-primary"
+            (click)="switchButton(pokemon.id, $event)">Catch</button>
+        <button *ngIf="pokemon.isCaught" class="btn btn-primary" (click)="switchButton(pokemon.id, $event)">Set
+            free</button>
+        <button class="btn btn-primary">Edit</button>
+    </div>
+</a>

@@ -87,7 +87,7 @@ export class PokemonsService {
   }
 
   filterPokemons(name: string): Pokemon[] {
-    return this.pokemons.filter((pokemon: Pokemon) => pokemon.name === name);
+    return this.pokemons.filter((pokemon: Pokemon) => pokemon.name.indexOf(name) !== -1);
   }
 
   getPokemonById(id: number): Pokemon {
