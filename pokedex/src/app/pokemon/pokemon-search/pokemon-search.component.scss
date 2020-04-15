@@ -1,0 +1,10 @@
+.form-inline {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+
+    .form-control {
+        margin-right: 10px;
+        width: 307px;
+    }
+}
