@@ -105,4 +105,13 @@ export class PokemonsService {
   getPokemonById(id: number): Pokemon {
     return this.pokemons.find((pokemon: Pokemon) => pokemon.id === id);
   }
+
+  updatePokemon(pokemon: Pokemon): void {
+    this.pokemons = this.pokemons.map((item) => {
+      if (item.id === pokemon.id) {
+        return pokemon;
+      }
+      return item;
+    });
+  }
 }
