@@ -8,6 +8,7 @@ import { PokemonTextComponent } from './pokemon-text/pokemon-text.component';
 import { PokemonProfileComponent } from './pokemon-profile/pokemon-profile.component';
 import { PokemonSearchComponent } from './pokemon-search/pokemon-search.component';
 import { RouterModule } from '@angular/router';
+import { EditPokemonProfileComponent } from './edit-pokemon-profile/edit-pokemon-profile.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RouterModule } from '@angular/router';
     RedBoldDirective,
     PokemonTextComponent,
     PokemonProfileComponent,
-    PokemonSearchComponent
+    PokemonSearchComponent,
+    EditPokemonProfileComponent
   ],
   imports: [
     CommonModule,

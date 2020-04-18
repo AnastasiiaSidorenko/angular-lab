@@ -4,8 +4,13 @@
         <h5 class="card-title">{{pokemon.name}}</h5>
         <p class="card-text">id:{{pokemon.id}}</p>
         <p class="card-text">damage:{{pokemon.damage}}</p>
-        <button *ngIf="!pokemon.isCaught" class="btn btn-primary" (click)="switchButton(pokemon.id, $event)">Catch</button>
-        <button *ngIf="pokemon.isCaught" class="btn btn-primary" (click)="switchButton(pokemon.id, $event)">Set free</button>
-        <button class="btn btn-primary">Edit</button>
+        <button *ngIf="!pokemon.isCaught" class="btn btn-primary"
+            (click)="switchButton(pokemon.id, $event)">Catch</button>
+        <button *ngIf="pokemon.isCaught" class="btn btn-primary" (click)="switchButton(pokemon.id, $event)">
+            Set free
+        </button>
+        <button (click)="goToEditForm(pokemon.id, $event)" class="btn btn-primary">
+            Edit
+        </button>
     </div>
 </a>

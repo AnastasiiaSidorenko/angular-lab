@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
 import { Pokemon } from '../models/pokemon.model';
 
 @Component({
@@ -11,7 +12,7 @@ export class PokemonCardComponent implements OnInit {
   @Input() pokemon: Pokemon;
   @Output() changed = new EventEmitter<number>();
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -20,5 +21,11 @@ export class PokemonCardComponent implements OnInit {
     event.preventDefault();
     event.stopPropagation();
     this.changed.emit(id);
+  }
+
+  goToEditForm(id: number, event: Event): void {
+    event.preventDefault();
+    event.stopPropagation();
+    this.router.navigate([`pokemons/${id}/edit`]);
   }
 }

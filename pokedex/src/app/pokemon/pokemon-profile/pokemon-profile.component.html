@@ -8,14 +8,14 @@
                 <h5 class="card-title">{{pokemon.name}}</h5>
                 <p class="card-text">id: {{pokemon.id}}</p>
                 <p class="card-text">damage: {{pokemon.damage}}</p>
-                <p class="card-text">created at: {{pokemon.createdAt | date:"dd/MM/yyyy"}}</p>
+                <p class="card-text">created at: {{pokemon.createdAt | date:"dd.MM.yyyy"}}</p>
                 <button *ngIf="!pokemon.isCaught" (click)="catchPokemon()" class="btn btn-primary">
                     Catch
                 </button>
                 <button *ngIf="pokemon.isCaught" (click)="catchPokemon()" class="btn btn-primary">
                     Set free
                 </button>
-                <button class="btn btn-primary">Edit</button>
+                <button (click)="goToEditForm(pokemon.id)" class="btn btn-primary">Edit</button>
             </div>
         </div>
     </div>
