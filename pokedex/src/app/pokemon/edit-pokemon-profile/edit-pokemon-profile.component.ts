@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../models/pokemon.model';
 import { ActivatedRoute } from '@angular/router';
 import { PokemonsService } from '../services/pokemons.service';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { SaveModalComponent } from '../save-modal/save-modal.component';
 
 @Component({
   selector: 'app-edit-pokemon-profile',
@@ -13,7 +15,8 @@ export class EditPokemonProfileComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private pokemonsService: PokemonsService
+    private pokemonsService: PokemonsService,
+    private modalService: BsModalService
   ) { }
 
   ngOnInit(): void {
@@ -27,6 +30,10 @@ export class EditPokemonProfileComponent implements OnInit {
 
   saveChanges(): void {
     this.pokemonsService.updatePokemon(this.pokemon);
+    const initialState = {
+      id: this.pokemon.id
+    };
+    this.modalService.show(SaveModalComponent, { class: 'modal-sm', initialState });
   }
 
   cancelChanges(): void { }

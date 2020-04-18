@@ -9,6 +9,9 @@ import { PokemonProfileComponent } from './pokemon-profile/pokemon-profile.compo
 import { PokemonSearchComponent } from './pokemon-search/pokemon-search.component';
 import { RouterModule } from '@angular/router';
 import { EditPokemonProfileComponent } from './edit-pokemon-profile/edit-pokemon-profile.component';
+import { SaveModalComponent } from './save-modal/save-modal.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { CancelModalComponent } from './cancel-modal/cancel-modal.component';
 
 @NgModule({
   declarations: [
@@ -18,16 +21,20 @@ import { EditPokemonProfileComponent } from './edit-pokemon-profile/edit-pokemon
     PokemonTextComponent,
     PokemonProfileComponent,
     PokemonSearchComponent,
-    EditPokemonProfileComponent
+    EditPokemonProfileComponent,
+    SaveModalComponent,
+    CancelModalComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    ModalModule.forRoot()
   ],
   exports: [
     PokemonsPageComponent,
     PokemonCardComponent,
-    PokemonProfileComponent]
+    PokemonProfileComponent
+  ]
 })
 export class PokemonModule { }
