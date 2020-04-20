@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PokemonsService } from '../services/pokemons.service';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { SaveModalComponent } from '../save-modal/save-modal.component';
-import { BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-edit-pokemon-profile',
