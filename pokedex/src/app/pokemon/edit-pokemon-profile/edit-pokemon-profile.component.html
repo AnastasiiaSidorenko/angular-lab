@@ -1,0 +1,16 @@
+<form #pokemonForm="ngForm">
+    <div class="form-group">
+        <label for="pokemonName">Pokemon's name</label>
+        <input type="text" class="form-control" id="pokemonName" [(ngModel)]="pokemon.name" name="name">
+    </div>
+    <div class="form-group">
+        <label for="pokemonDamage">Damage</label>
+        <input type="number" class="form-control" id="pokemonDamage" [(ngModel)]="pokemon.damage" name="damage">
+    </div>
+    <div class="form-group">
+        <label for="creationDate">Created at</label>
+        <input type="date" class="form-control" id="creationDate" [(ngModel)]="pokemon.createdAt" name="createdAt">
+    </div>
+    <button type="button" (click)=saveChanges() class="btn btn-primary">Save</button>
+    <button type="button" (click)=cancelChanges() class="btn btn-primary">Cancel</button>
+</form>
