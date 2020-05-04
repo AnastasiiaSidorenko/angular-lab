@@ -2,9 +2,9 @@
     <p>Name: {{pokemon.name}}, id: {{pokemon.id}}, damage: {{pokemon.damage}}</p>
     <div class="buttons">
         <button *ngIf="!pokemon.isCaught" class="btn btn-primary"
-            (click)="switchButton(pokemon.id, $event)">Catch</button>
-        <button *ngIf="pokemon.isCaught" class="btn btn-primary" (click)="switchButton(pokemon.id, $event)">Set
+            (click)="catchPokemon(pokemon, $event)">Catch</button>
+        <button *ngIf="pokemon.isCaught" class="btn btn-primary" (click)="catchPokemon(pokemon, $event)">Set
             free</button>
-        <button class="btn btn-primary">Edit</button>
+        <button class="btn btn-primary" (click)="goToEditForm(pokemon.id, $event)">Edit</button>
     </div>
 </a>

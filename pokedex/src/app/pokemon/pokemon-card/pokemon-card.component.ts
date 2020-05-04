@@ -10,17 +10,17 @@ import { Pokemon } from '../models/pokemon.model';
 })
 export class PokemonCardComponent implements OnInit {
   @Input() pokemon: Pokemon;
-  @Output() changed = new EventEmitter<number>();
+  @Output() changed = new EventEmitter<Pokemon>();
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  switchButton(id: number, event: Event): void {
+  catchPokemon(pokemon: Pokemon, event: Event): void {
     event.preventDefault();
     event.stopPropagation();
-    this.changed.emit(id);
+    this.changed.emit(pokemon);
   }
 
   goToEditForm(id: number, event: Event): void {
