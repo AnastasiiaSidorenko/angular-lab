@@ -5,13 +5,13 @@
 <app-pokemon-search (changed)="filterPokemons($event)"></app-pokemon-search>
 
 <div *ngIf="!simpleView" class="pokemons-list">
-    <ng-container *ngFor="let pokemon of pokemons">
+    <ng-container *ngFor="let pokemon of pokemons$ | async">
         <app-pokemon-card [pokemon]="pokemon" (changed)="onChanged($event)"></app-pokemon-card>
     </ng-container>
 </div>
 
 <ng-container *ngIf="simpleView">
-    <ng-container *ngFor="let pokemon of pokemons">
+    <ng-container *ngFor="let pokemon of pokemons$ | async">
         <app-pokemon-text [pokemon]="pokemon" (changed)="onChanged($event)"></app-pokemon-text>
     </ng-container>
 </ng-container>

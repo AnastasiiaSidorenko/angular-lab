@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Pokemon } from '../models/pokemon.model';
+import { of, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -94,24 +95,27 @@ export class PokemonsService {
 
   constructor() { }
 
-  getAllPokemons(): Pokemon[] {
-    return this.pokemons;
+  getAllPokemons(): Observable<Pokemon[]> {
+    return of(this.pokemons);
   }
 
-  filterPokemons(name: string): Pokemon[] {
-    return this.pokemons.filter((pokemon: Pokemon) => pokemon.name.indexOf(name) !== -1);
+  filterPokemons(name: string): Observable<Pokemon[]> {
+    const filteredPokemons = this.pokemons.filter((pokemon: Pokemon) => pokemon.name.indexOf(name) !== -1);
+    return of(filteredPokemons);
   }
 
-  getPokemonById(id: number): Pokemon {
-    return this.pokemons.find((pokemon: Pokemon) => pokemon.id === id);
+  getPokemonById(id: number): Observable<Pokemon> {
+    const pokemon = this.pokemons.find((item: Pokemon) => item.id === id);
+    return of(pokemon);
   }
 
-  updatePokemon(pokemon: Pokemon): void {
+  updatePokemon(pokemon: Pokemon): Observable<Pokemon> {
     this.pokemons = this.pokemons.map((item) => {
       if (item.id === pokemon.id) {
         return pokemon;
       }
       return item;
     });
+    return of(pokemon);
   }
 }

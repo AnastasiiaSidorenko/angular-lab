@@ -12,6 +12,10 @@ import { EditPokemonProfileComponent } from './edit-pokemon-profile/edit-pokemon
 import { SaveModalComponent } from './save-modal/save-modal.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { CancelModalComponent } from './cancel-modal/cancel-modal.component';
+import { StoreModule } from '@ngrx/store';
+import { pokemonsReducer } from '../@ngrx/pokemon.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { PokemonsEffects } from '../@ngrx/pokemon.effects';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,9 @@ import { CancelModalComponent } from './cancel-modal/cancel-modal.component';
     CommonModule,
     FormsModule,
     RouterModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    StoreModule.forFeature('pokemonFeature', pokemonsReducer),
+    EffectsModule.forFeature([PokemonsEffects])
   ],
   exports: [
     PokemonsPageComponent,
