@@ -4,7 +4,7 @@ import { PokemonSearchComponent } from './pokemon-search.component';
 import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 
-fdescribe('PokemonSearchComponent', () => {
+describe('PokemonSearchComponent', () => {
   let component: PokemonSearchComponent;
   let fixture: ComponentFixture<PokemonSearchComponent>;
 
