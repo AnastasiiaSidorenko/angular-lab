@@ -117,6 +117,10 @@ describe('PokemonsService', () => {
     service = new PokemonsService();
   });
 
+  it('should create', () => {
+    expect(service).toBeTruthy();
+  });
+
   it('getAllPokemons should return array of pokemons',
     (done: DoneFn) => {
       service.getAllPokemons().subscribe(value => {

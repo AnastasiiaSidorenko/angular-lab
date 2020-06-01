@@ -48,6 +48,10 @@ describe('PokemonCardComponent', () => {
     router = TestBed.get(Router);
   });
 
+  it('should create', () => {
+    expect(testHostComponent).toBeTruthy();
+  });
+
   it('should navigate', () => {
     let component = fixture.componentInstance;
     const navigateSpy = spyOn(router, 'navigate');
