@@ -1,11 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SaveModalComponent } from './save-modal.component';
+import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { ModalModule, BsModalRef } from 'ngx-bootstrap/modal';
 
 describe('SaveModalComponent', () => {
   let component: SaveModalComponent;
   let fixture: ComponentFixture<SaveModalComponent>;
+  let router: Router;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -25,6 +27,8 @@ describe('SaveModalComponent', () => {
     fixture = TestBed.createComponent(SaveModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+    router = TestBed.get(Router);
   });
 
   it('should create', () => {
@@ -36,5 +40,12 @@ describe('SaveModalComponent', () => {
     const confirmBtn = fixture.nativeElement.querySelector('.btn');
     confirmBtn.click();
     expect(component.confirm).toHaveBeenCalled();
+  });
+
+  it('should navigate', () => {
+    const navigateSpy = spyOn(router, 'navigate');
+    const confirmBtn = fixture.nativeElement.querySelector('.btn');
+    confirmBtn.click()
+    expect(navigateSpy).toHaveBeenCalled();
   });
 });
