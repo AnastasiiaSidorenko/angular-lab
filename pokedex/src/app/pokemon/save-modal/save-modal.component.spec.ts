@@ -27,7 +27,14 @@ describe('SaveModalComponent', () => {
     fixture.detectChanges();
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should call confirm', () => {
+    spyOn(component, 'confirm').and.callThrough();
+    const confirmBtn = fixture.nativeElement.querySelector('.btn');
+    confirmBtn.click();
+    expect(component.confirm).toHaveBeenCalled();
+  });
 });
