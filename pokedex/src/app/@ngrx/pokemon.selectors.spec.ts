@@ -109,7 +109,7 @@ describe('My Selectors', () => {
     expect(selectCurrentPokemon(currentPokemon)).toEqual(state.currentPokemon);
   });
 
-  it('get current pokemons', () => {
+  it('get pokemons', () => {
     const state = selectPokemonsState(currentPokemon);
     expect(selectAllPokemons(currentPokemon)).toEqual(state.pokemons);
   });
