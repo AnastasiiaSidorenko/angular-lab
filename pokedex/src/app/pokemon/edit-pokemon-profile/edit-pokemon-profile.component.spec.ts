@@ -8,6 +8,7 @@ describe('EditPokemonProfileComponent', () => {
   let component: EditPokemonProfileComponent;
   let fixture: ComponentFixture<EditPokemonProfileComponent>;
 
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [EditPokemonProfileComponent],
@@ -16,7 +17,9 @@ describe('EditPokemonProfileComponent', () => {
         ModalModule.forRoot(),
         StoreModule.forRoot({})
       ],
-      providers: [BsModalRef]
+      providers: [
+        BsModalRef
+      ]
     })
       .compileComponents();
   }));
@@ -26,8 +29,4 @@ describe('EditPokemonProfileComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
 });

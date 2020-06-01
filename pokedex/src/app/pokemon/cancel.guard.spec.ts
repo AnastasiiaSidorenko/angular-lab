@@ -12,7 +12,7 @@ describe('CancelGuardGuard', () => {
     guard = TestBed.inject(CancelGuard);
   });
 
-  // it('should be created', () => {
-  //   expect(guard).toBeTruthy();
-  // });
+  it('should be created', () => {
+    expect(guard).toBeTruthy();
+  });
 });
