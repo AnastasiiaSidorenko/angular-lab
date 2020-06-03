@@ -1,12 +1,14 @@
 import { TestBed } from '@angular/core/testing';
-
 import { CancelGuard } from './cancel.guard';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 describe('CancelGuardGuard', () => {
   let guard: CancelGuard;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports: [ModalModule.forRoot()]
+    });
     guard = TestBed.inject(CancelGuard);
   });
 
